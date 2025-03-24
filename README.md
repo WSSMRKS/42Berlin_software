@@ -107,13 +107,11 @@ echo "Software successfully installed!"
 
 echo "Disc space remaining:"
 size=$(du -sh ~ | awk '{print $1}' | tr -d '[:alpha:]')
-result=$(echo "scale=2\n$size / 5" | bc)
-result2=$(echo "scale=2\n1 - 0$result" | bc | tr -d '[:punct:]')
+result=$(echo "scale=2;$size / 5" | bc)
+result2=$(echo "scale=2;1 - 0$result" | bc | tr -d '[:punct:]')
 echo $result2%
 if [ "$result2" -lt 20 ]; then
 echo Disc space low to examine enter:
 echo \"ncdu ~\"
 fi
-
-
 ```
