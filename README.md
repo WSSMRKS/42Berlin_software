@@ -52,6 +52,14 @@ echo Disc space low to examine enter:
 echo \"ncdu ~\"
 fi
 ```
+Including in your .zshrc or .bashrc
+```
+if [ "$setup_done" -lt 1 ]; then
+	bash ./install_software.sh
+	export setup_done=1
+fi
+```
+
 
 # Shell Script: install_software.sh
 ```
